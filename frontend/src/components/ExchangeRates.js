@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../styles/exchangeRates.css';
 
 const ExchangeRates = () => {
     const [rates, setRates] = useState([]);

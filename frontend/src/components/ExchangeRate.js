@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../styles/exchangeRate.css';
 
 const ExchangeRate = () => {
     const [currency, setCurrency] = useState('');
