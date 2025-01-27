@@ -5,6 +5,8 @@ import ExchangeRates from './components/ExchangeRates';
 import EditProfile from './components/EditProfile';
 import DeleteAccount from './components/DeleteAccount';
 import ChangePassword from './components/ChangePassword';
+import MainSite from './components/MainSite';
+import ToDoList from './components/ToDoList';
 
 const App = () => {
     return (
@@ -24,33 +26,14 @@ const App = () => {
                         </div>
                     }
                 />
+                <Route path="/main-site" element={<MainSite />} />
                 <Route path="/register" element={<AuthForm type="register" />} />
                 <Route path="/login" element={<AuthForm type="login" />} />
-                <Route
-                    path="/exchange-rates"
-                    element={
-                        <div>
-                            <div className='mainButtons'>
-                                <Link to="/edit-profile">
-                                    <button className='button'>Zmień dane</button>
-                                </Link>
-                                <Link to="/delete-account">
-                                    <button className='button'>Usuń konto</button>
-                                </Link>
-                                <Link to="/change-password">
-                                    <button className='button'>Zmień hasło</button>
-                                </Link>
-                                <Link to="/">
-                                    <button className='button'>Wyloguj</button>
-                                </Link>
-                            </div>
-                            <ExchangeRates />
-                        </div>
-                    }
-                />
                 <Route path="/edit-profile" element={<EditProfile />} />
                 <Route path="/delete-account" element={<DeleteAccount />} />
                 <Route path="/change-password" element={<ChangePassword />} />
+                <Route path="/exchange-rates" element={<ExchangeRates />} />
+                <Route path="/to-do-list" element={<ToDoList />} />
             </Routes>
         </Router>
     );

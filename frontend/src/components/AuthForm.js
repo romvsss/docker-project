@@ -28,7 +28,7 @@ const AuthForm = ({ type }) => {
             const response = await axios.post(endpoint, payload);
             alert(response.data.message || 'Zalogowano pomyślnie!');
             if (type === 'login') {
-                navigate('/exchange-rates'); // Przekierowanie po zalogowaniu
+                navigate('/main-site'); // Przekierowanie po zalogowaniu
             }
         } catch (error) {
             if (error.response && error.response.status === 400) {
