@@ -1,12 +1,13 @@
 /* Styl dla całego kontenera */
 div {
+    margin-top: 20px;
     padding: 20px;
     margin: auto;
     max-width: 600px;
     background-color: #f5f9fc; /* Jasne tło */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 /* Nagłówek */

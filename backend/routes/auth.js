@@ -8,7 +8,7 @@ const { Pool } = require('pg');
 // Konfiguracja połączenia z bazą PostgreSQL
 const pool = new Pool({
     user: 'user',
-    host: 'localhost',
+    host: 'db',
     database: 'mydatabase',
     password: 'password',
     port: 5432,
@@ -165,6 +165,16 @@ router.put('/edit-profile', async (req, res) => {
         res.json({ message: 'Profil został zaktualizowany!' });
     } catch (error) {
         console.error('Błąd serwera przy edycji profilu:', error);
+        res.status(500).json({ message: 'Błąd serwera' });
+    }
+});
+
+// Funkcja wylogowania
+router.post('/logout', (req, res) => {
+    try {
+        res.status(200).json({ message: 'Wylogowano pomyślnie!' });
+    } catch (error) {
+        console.error('Błąd podczas wylogowania:', error);
         res.status(500).json({ message: 'Błąd serwera' });
     }
 });

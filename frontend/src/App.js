@@ -30,21 +30,21 @@ const App = () => {
                     path="/exchange-rates"
                     element={
                         <div>
-                            <ExchangeRates />
-                            <div>
+                            <div className='mainButtons'>
                                 <Link to="/edit-profile">
-                                    <button>Zmień dane</button>
+                                    <button className='button'>Zmień dane</button>
                                 </Link>
                                 <Link to="/delete-account">
-                                    <button>Usuń konto</button>
+                                    <button className='button'>Usuń konto</button>
                                 </Link>
                                 <Link to="/change-password">
-                                    <button>Zmień hasło</button>
+                                    <button className='button'>Zmień hasło</button>
                                 </Link>
                                 <Link to="/">
-                                    <button>Wyloguj</button>
+                                    <button className='button'>Wyloguj</button>
                                 </Link>
                             </div>
+                            <ExchangeRates />
                         </div>
                     }
                 />
