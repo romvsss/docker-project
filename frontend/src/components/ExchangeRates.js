@@ -31,20 +31,20 @@ const ExchangeRates = () => {
     },);
 
     return (
-        <div>
-            <h2>Kursy Walut</h2>
-            <table>
-                <thead>
+        <div class="container">
+            <h2 class="heading">Kursy Walut</h2>
+            <table class="table">
+                <thead class="table-head">
                     <tr>
                         <th>Waluta</th>
                         <th>Kurs</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-body">
                     {rates.map((rate) => (
                         <tr key={rate.currency}>
-                            <td>{rate.currency}</td>
-                            <td>{rate.rate}</td>
+                            <td class="table-cell">{rate.currency}</td>
+                            <td class="table-cell">{rate.rate}</td>
                         </tr>
                     ))}
                 </tbody>

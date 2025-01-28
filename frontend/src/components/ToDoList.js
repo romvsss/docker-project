@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import '../styles/todolist.css';
 
 const ToDoList = () => {
-    const [tasks, setTasks] = useState([
-        { content: "przykład", done: false },
-    ]);
+    const [tasks, setTasks] = useState([]);
     const [hideDoneTasks, setHideDoneTasks] = useState(false);
     const [newTaskContent, setNewTaskContent] = useState("");
 
+    const generateId = () => Math.random().toString(36).substr(2, 9);
+
     const addNewTask = (content) => {
-        setTasks([...tasks, { content, done: false }]);
+        setTasks([...tasks, { id: generateId(), content, done: false }]);
     };
 
-    const removeTask = (index) => {
-        setTasks(prev => prev.filter((_, taskIndex) => taskIndex !== index));
+    const removeTask = (id) => {
+        setTasks(prev => prev.filter(task => task.id !== id));
     };
 
-    const toggleTaskDone = (index) => {
-        setTasks(tasks.map((task, taskIndex) =>
-            taskIndex === index ? { ...task, done: !task.done } : task
+    const toggleTaskDone = (id) => {
+        setTasks(tasks.map(task =>
+            task.id === id ? { ...task, done: !task.done } : task
         ));
     };
 
@@ -76,11 +76,11 @@ const ToDoList = () => {
                 <ul className="taskList--ul">
                     {tasks
                         .filter(task => !hideDoneTasks || !task.done)
-                        .map((task, index) => (
-                            <li key={index} className={`taskList--li ${task.done && hideDoneTasks ? "taskList--hiddenItems" : ""}`}>
+                        .map((task) => (
+                            <li key={task.id} className={`taskList--li ${task.done && hideDoneTasks ? "taskList--hiddenItems" : ""}`}>
                                 <button
                                     className="taskList--toggle"
-                                    onClick={() => toggleTaskDone(index)}
+                                    onClick={() => toggleTaskDone(task.id)}
                                 >
                                     {task.done ? "✔" : ""}
                                 </button>
@@ -89,7 +89,7 @@ const ToDoList = () => {
                                 </span>
                                 <button
                                     className="taskList--remove"
-                                    onClick={() => removeTask(index)}
+                                    onClick={() => removeTask(task.id)}
                                 >
                                     🗑️
                                 </button>

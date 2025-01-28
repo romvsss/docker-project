@@ -1,8 +1,4 @@
-.header{
-    max-width: 60%;
-    margin: auto;
-    margin-top: 200px;
-}.main {
+main {
     max-width: 60%;
     margin: auto;
 }

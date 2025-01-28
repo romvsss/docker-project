@@ -7,6 +7,7 @@ import DeleteAccount from './components/DeleteAccount';
 import ChangePassword from './components/ChangePassword';
 import MainSite from './components/MainSite';
 import ToDoList from './components/ToDoList';
+import ReportProblem from './components/ReportProblem';
 
 const App = () => {
     return (
@@ -34,6 +35,7 @@ const App = () => {
                 <Route path="/change-password" element={<ChangePassword />} />
                 <Route path="/exchange-rates" element={<ExchangeRates />} />
                 <Route path="/to-do-list" element={<ToDoList />} />
+                <Route path="/report-problem" element={<ReportProblem />} />
             </Routes>
         </Router>
     );
