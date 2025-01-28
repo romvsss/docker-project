@@ -8,7 +8,7 @@ const ExchangeRate = () => {
 
     const fetchExchangeRate = async () => {
         try {
-            const response = await axios.get(`/auth/exchange-rate/${currency}`);
+            const response = await axios.get(`http://localhost:5000/nbp/exchange-rate/${currency}`);
             setExchangeRate(response.data.exchangeRate);
         } catch (error) {
             alert('Błąd pobierania kursu walut');

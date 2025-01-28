@@ -16,7 +16,7 @@ const EditProfile = () => {
     useEffect(() => {
         const fetchProfileData = async () => {
             try {
-                const response = await axios.get(`${API_BASE_URL}/auth/get-profile`, {
+                const response = await axios.get('http://localhost:5000/auth/get-profile', {
                     params: { email },
                 });
                 console.log('Dane profilu:', response.data);

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import AuthForm from './components/AuthForm';
 import ExchangeRates from './components/ExchangeRates';
+import ExchangeRate from './components/ExchangeRate';
 import EditProfile from './components/EditProfile';
 import DeleteAccount from './components/DeleteAccount';
 import ChangePassword from './components/ChangePassword';
@@ -33,6 +34,7 @@ const App = () => {
                 <Route path="/edit-profile" element={<EditProfile />} />
                 <Route path="/delete-account" element={<DeleteAccount />} />
                 <Route path="/change-password" element={<ChangePassword />} />
+                <Route path="/exchange-rate" element={<ExchangeRate />} />
                 <Route path="/exchange-rates" element={<ExchangeRates />} />
                 <Route path="/to-do-list" element={<ToDoList />} />
                 <Route path="/report-problem" element={<ReportProblem />} />

@@ -24,6 +24,9 @@ const MainSite = () => {
         <Link to="/exchange-rates">
           <button className="button">Kursy walut</button>
         </Link>
+        <Link to="/exchange-rate">
+          <button className="button">Przelicznik waluty</button>
+        </Link>
         <Link to="/to-do-list">
           <button className="button">Lista do zrobienia</button>
         </Link>

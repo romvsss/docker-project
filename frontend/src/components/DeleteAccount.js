@@ -7,7 +7,7 @@ const DeleteAccount = () => {
 
     const handleDeleteAccount = async () => {
         try {
-            const response = await axios.delete('/auth/delete-account', { data: { email } });
+            const response = await axios.delete('http://localhost:5000/auth/delete-account', { data: { email } });
             alert(response.data.message);
         } catch (error) {
             alert('Błąd usuwania konta');

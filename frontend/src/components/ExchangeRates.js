@@ -12,7 +12,7 @@ const ExchangeRates = () => {
                 const fetchedRates = await Promise.all(
                     currencies.map(async (currency) => {
                         try {
-                            const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/nbp/exchange-rate/${currency}`);
+                            const response = await axios.get(`http://localhost:5000/nbp/exchange-rate/${currency}`);
                             return { currency, rate: response.data.rate };
                         } catch (error) {
                             console.warn(`Brak danych dla waluty ${currency}:`, error.response?.data?.message || error.message);

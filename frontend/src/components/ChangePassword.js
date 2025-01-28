@@ -8,7 +8,7 @@ const ChangePassword = () => {
 
     const handleChangePassword = async () => {
         try {
-            const response = await axios.put('/auth/change-password', {
+            const response = await axios.put('http://localhost:5000/auth/change-password', {
                 currentPassword,
                 newPassword,
             });
